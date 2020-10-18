@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+	<title>Toped Jaya</title>
+</head>
+<body>
+	<h1>Welcome to Toped Commerce!</h1>
+	<table class="table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Stock</th>
+				<th>Price</th>
+				<th>Rating</th>
+				<th>Sold</th>
+				<th>Seen</th>
+				<th>Weight</th>
+				<th>Condition</th>
+				<th>Category</th>
+				<th>Action</th>
+			</tr>
+			
+		</thead>
+		<tbody>
+			<tr th:each="item : ${items}">
+				<td th:text="${item.item_name}"></td>
+				<td th:text="${item.stock}"></td>
+				<td th:text="${item.price}"></td>
+				<td th:text="${item.rating}"></td>
+				<td th:text="${item.sold}"></td>
+				<td th:text="${item.seen}"></td>
+				<td th:text="${item.itemDetail.weight}"></td>
+				<td th:text="${item.itemDetail.condition}"></td>
+				<td th:text="${item.itemDetail.insurance}"></td>
+				<td><button>buy</button></td>
+				</tr>
+			</tbody>
+	</table>
+</body>
+</html>
